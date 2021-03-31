@@ -18,27 +18,29 @@ public class TicTacToe {
 		
 		displayBoard(Board);
 		allowPlayerToChooseEitherXorO();
-		abiltytoMovetoDesiredLocation(Board);
-		showBoard(Board);
-		computerTurn(Board);
+		whoPlaysFirst(Board);
 	}
+	
 	
 	private static void computerTurn(char[][] Board) {
-		Random rand = new Random();
-		int computerMove;
-		while (true) {
-			computerMove = rand.nextInt(9) + 1;
-			if (isValidMove(Board,computerMove)) {
-				break;
-			}
-		}
-		System.out.println("Computer chose location : " + computerMove);
-		placeMove(Board,Integer.toString(computerMove),computer);
-		showBoard(Board);
-	}
-
 		
-	
+		
+		String computerMove;
+		while(true) {
+		System.out.println("Computers Turn - Enter a desired location (1-9) : \n");
+		Scanner scanner = new Scanner(System.in);
+		computerMove=scanner.nextLine();
+		
+		if(isValidMove(Board,Integer.parseInt(computerMove))) {
+			break;
+		}else {
+			System.out.println(computerMove+" is not a valid move");
+		}
+		}
+		placeMove(Board,computerMove,computer);
+		showBoard(Board);
+		}
+			
 	
 	public static void allowPlayerToChooseEitherXorO()
 	{
@@ -82,12 +84,23 @@ public class TicTacToe {
 	}
 
 	public static void abiltytoMovetoDesiredLocation(char[][] Board) {
-		System.out.println("Enter a desired location (1-9) : \n");
+		String desiredLocation;
+		while(true) {
+		System.out.println("Players Turn - Enter a desired location (1-9) : \n");
 		Scanner scanner = new Scanner(System.in);
-		String desiredLocation=scanner.nextLine();
-		System.out.println("Loaction Selected :"+desiredLocation);
-		placeMove(Board, desiredLocation,player1);
-	}
+		desiredLocation=scanner.nextLine();
+		
+		if(isValidMove(Board,Integer.parseInt(desiredLocation))) {
+			break;
+		}else {
+			System.out.println(desiredLocation+" is not a valid move");
+		}
+		}
+		placeMove(Board,desiredLocation,player1);
+		showBoard(Board);
+		}
+
+	
 
 	private static void placeMove(char[][] Board, String desiredLocation,char letter) {
 		switch(desiredLocation) {
@@ -150,5 +163,3 @@ public class TicTacToe {
 }
 	
 			
-
-
