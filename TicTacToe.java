@@ -18,11 +18,9 @@ public class TicTacToe {
 		
 		displayBoard(Board);
 		allowPlayerToChooseEitherXorO();
-//		abiltytoMovetoDesiredLocation(Board);
-//		showBoard(Board);
-//		computerTurn(Board);
 		whoPlaysFirst(Board);
 	}
+	
 	
 	public static void whoPlaysFirst(char[][]Board)
 	{
@@ -30,13 +28,16 @@ public class TicTacToe {
 		int toss=random.nextInt(2)+1;
 		if(toss==1)
 		{
+			
 			System.out.println("Player plays first");
 			abiltytoMovetoDesiredLocation(Board);
 			computerTurn(Board);
 			
+			
 		}
 		else
 		{
+			
 			System.out.println("Computer Plays first");
 			computerTurn(Board);
 			abiltytoMovetoDesiredLocation(Board);
@@ -44,22 +45,26 @@ public class TicTacToe {
 		}
 	}
 	
-	private static void computerTurn(char[][] Board) {
-		Random rand = new Random();
-		int computerMove;
-		while (true) {
-			computerMove = rand.nextInt(9) + 1;
-			if (isValidMove(Board,computerMove)) {
-				break;
-			}
-		}
-		System.out.println("Computer chose location : " + computerMove);
-		placeMove(Board,Integer.toString(computerMove),computer);
-		showBoard(Board);
-	}
-
-		
 	
+	private static void computerTurn(char[][] Board) {
+		
+		
+		String computerMove;
+		while(true) {
+		System.out.println("Computers Turn - Enter a desired location (1-9) : \n");
+		Scanner scanner = new Scanner(System.in);
+		computerMove=scanner.nextLine();
+		
+		if(isValidMove(Board,Integer.parseInt(computerMove))) {
+			break;
+		}else {
+			System.out.println(computerMove+" is not a valid move");
+		}
+		}
+		placeMove(Board,computerMove,computer);
+		showBoard(Board);
+		}
+			
 	
 	public static void allowPlayerToChooseEitherXorO()
 	{
@@ -103,13 +108,23 @@ public class TicTacToe {
 	}
 
 	public static void abiltytoMovetoDesiredLocation(char[][] Board) {
-		System.out.println("Enter a desired location (1-9) : \n");
+		String desiredLocation;
+		while(true) {
+		System.out.println("Players Turn - Enter a desired location (1-9) : \n");
 		Scanner scanner = new Scanner(System.in);
-		String desiredLocation=scanner.nextLine();
-		System.out.println("Loaction selected by player :"+desiredLocation);
-		placeMove(Board, desiredLocation,player1);
+		desiredLocation=scanner.nextLine();
+		
+		if(isValidMove(Board,Integer.parseInt(desiredLocation))) {
+			break;
+		}else {
+			System.out.println(desiredLocation+" is not a valid move");
+		}
+		}
+		placeMove(Board,desiredLocation,player1);
 		showBoard(Board);
-	}
+		}
+
+	
 
 	private static void placeMove(char[][] Board, String desiredLocation,char letter) {
 		switch(desiredLocation) {
