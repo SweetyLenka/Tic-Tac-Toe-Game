@@ -18,9 +18,30 @@ public class TicTacToe {
 		
 		displayBoard(Board);
 		allowPlayerToChooseEitherXorO();
-		abiltytoMovetoDesiredLocation(Board);
-		showBoard(Board);
-		computerTurn(Board);
+//		abiltytoMovetoDesiredLocation(Board);
+//		showBoard(Board);
+//		computerTurn(Board);
+		whoPlaysFirst(Board);
+	}
+	
+	public static void whoPlaysFirst(char[][]Board)
+	{
+		Random random=new Random();
+		int toss=random.nextInt(2)+1;
+		if(toss==1)
+		{
+			System.out.println("Player plays first");
+			abiltytoMovetoDesiredLocation(Board);
+			computerTurn(Board);
+			
+		}
+		else
+		{
+			System.out.println("Computer Plays first");
+			computerTurn(Board);
+			abiltytoMovetoDesiredLocation(Board);
+			
+		}
 	}
 	
 	private static void computerTurn(char[][] Board) {
@@ -85,8 +106,9 @@ public class TicTacToe {
 		System.out.println("Enter a desired location (1-9) : \n");
 		Scanner scanner = new Scanner(System.in);
 		String desiredLocation=scanner.nextLine();
-		System.out.println("Loaction Selected :"+desiredLocation);
+		System.out.println("Loaction selected by player :"+desiredLocation);
 		placeMove(Board, desiredLocation,player1);
+		showBoard(Board);
 	}
 
 	private static void placeMove(char[][] Board, String desiredLocation,char letter) {
@@ -150,5 +172,3 @@ public class TicTacToe {
 }
 	
 			
-
-
