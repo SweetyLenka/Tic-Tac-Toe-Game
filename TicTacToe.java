@@ -3,24 +3,7 @@ import java.util.Scanner;
 
 public class TicTacToe {
 	 public static char player1;
-
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("WELCOME TO TIC-TAC-TOE GAME\n");
-		
-		char[][] Board = {{' ',' ',' '},
-						  {' ',' ',' '},
-						  {' ',' ',' '}};
-		
-		
-		displayBoard(Board);
-		allowPlayerToChooseEitherXorO();
-		abiltytoMovetoDesiredLocation(Board);
-		showBoard(Board);
-		
-		}
-		
+	
 	/*UC2 - Ability to allow the player to choose a letter X or O*/
 	public static void allowPlayerToChooseEitherXorO()
 	{
@@ -105,6 +88,25 @@ public class TicTacToe {
 		
 		}
 	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("WELCOME TO TIC-TAC-TOE GAME\n");
+		
+		char[][] Board = {{' ',' ',' '},
+						  {' ',' ',' '},
+						  {' ',' ',' '}};
+		
+		
+		displayBoard(Board);
+		allowPlayerToChooseEitherXorO();
+		abiltytoMovetoDesiredLocation(Board);
+		showBoard(Board);
+		
+		}
+		
+	
 			
 }
 
