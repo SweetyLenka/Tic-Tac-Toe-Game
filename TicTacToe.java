@@ -26,7 +26,7 @@ public class TicTacToe {
 		}
 			
 	
-	public static void allowPlayerToChooseEitherXorO()
+	public static void ChooseEitherXorO()
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Choose either X or O :");
@@ -156,7 +156,7 @@ public class TicTacToe {
 		
 		
 		displayBoard(Board);
-		allowPlayerToChooseEitherXorO();
+		ChooseEitherXorO();
 		whoPlaysFirst(Board);
 	}
 	
