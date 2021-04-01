@@ -20,7 +20,8 @@ public class TicTacToe {
 		showBoard(Board);
 		
 		}
-				
+		
+	/*UC2 - Ability to allow the player to choose a letter X or O*/
 	public static void allowPlayerToChooseEitherXorO()
 	{
 		Scanner sc = new Scanner(System.in);
@@ -52,6 +53,7 @@ public class TicTacToe {
 	}
 	
 	
+
 	public static void showBoard(char[][] Board) {
 		System.out.println("--------Showing Current Board------");
 		System.out.println(Board[0][0]+ "|" + Board[0][1]+ "|" +Board[0][2]);
