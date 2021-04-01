@@ -5,22 +5,6 @@ import java.util.Random;
 public class TicTacToe {
 	 public static char player1;
 	 public static char computer;
-
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("WELCOME TO TIC-TAC-TOE GAME\n");
-		
-		char[][] Board = {{' ',' ',' '},
-						  {' ',' ',' '},
-						  {' ',' ',' '}};
-		
-		
-		displayBoard(Board);
-		allowPlayerToChooseEitherXorO();
-		whoPlaysFirst(Board);
-	}
-	
 	
 	public static void whoPlaysFirst(char[][]Board)
 	{
@@ -67,13 +51,13 @@ public class TicTacToe {
 		Scanner scanner = new Scanner(System.in);
 		computerMove=scanner.nextLine();
 		
-		if(isValidMove(Board,Integer.parseInt(computerMove))) {
+		if(letterplacedatValid(Board,Integer.parseInt(computerMove))) {
 			break;
 		}else {
 			System.out.println(computerMove+" is not a valid move");
 		}
 		}
-		placeMove(Board,computerMove,computer);
+		placetheLetter(Board,computerMove,computer);
 		showBoard(Board);
 		}
 			
@@ -126,19 +110,19 @@ public class TicTacToe {
 		Scanner scanner = new Scanner(System.in);
 		desiredLocation=scanner.nextLine();
 		
-		if(isValidMove(Board,Integer.parseInt(desiredLocation))) {
+		if(letterplacedatValid(Board,Integer.parseInt(desiredLocation))) {
 			break;
 		}else {
 			System.out.println(desiredLocation+" is not a valid move");
 		}
 		}
-		placeMove(Board,desiredLocation,player1);
+		placetheLetter(Board,desiredLocation,player1);
 		showBoard(Board);
 		}
 
 	
 
-	private static void placeMove(char[][] Board, String desiredLocation,char letter) {
+	private static void placetheLetter(char[][] Board, String desiredLocation,char letter) {
 		switch(desiredLocation) {
 		case "1":
 			Board[0][0]=letter;
@@ -172,7 +156,7 @@ public class TicTacToe {
 		
 		}
 	}
-		private static boolean isValidMove (char[][] Board, int position) {
+		private static boolean letterplacedatValid (char[][] Board, int position) {
 			switch(position) {
 				case 1:
 					return (Board[0][0] == ' ');
@@ -237,6 +221,24 @@ public class TicTacToe {
 			}
 			return false;
 		}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("WELCOME TO TIC-TAC-TOE GAME\n");
+		
+		char[][] Board = {{' ',' ',' '},
+						  {' ',' ',' '},
+						  {' ',' ',' '}};
+		
+		
+		displayBoard(Board);
+		allowPlayerToChooseEitherXorO();
+		whoPlaysFirst(Board);
+	}
+	
+	
+	
 }
 	
 			
