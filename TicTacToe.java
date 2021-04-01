@@ -20,7 +20,7 @@ public class TicTacToe {
 		String userInput = sc.nextLine();
 		char player1=userInput.charAt(0);
 		char computer;
-		if (player1 != 'X' && player1 != '0' && player1 != 'x' && player1 != 'o' )
+		if (player1 != 'X' && player1 != 'O' && player1 != 'x' && player1 != 'o' )
 		{
 			System.out.println("Please enter a valid choice (Enter either X or O) : ");
 			 userInput = sc.nextLine();
