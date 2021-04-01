@@ -5,22 +5,6 @@ import java.util.Random;
 public class TicTacToe {
 	 public static char player1;
 	 public static char computer;
-
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("WELCOME TO TIC-TAC-TOE GAME\n");
-		
-		char[][] Board = {{' ',' ',' '},
-						  {' ',' ',' '},
-						  {' ',' ',' '}};
-		
-		
-		displayBoard(Board);
-		allowPlayerToChooseEitherXorO();
-		whoPlaysFirst(Board);
-	}
-	
 	
 	private static void computerTurn(char[][] Board) {
 		
@@ -160,6 +144,24 @@ public class TicTacToe {
 					return false;
 			}
 		}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("WELCOME TO TIC-TAC-TOE GAME\n");
+		
+		char[][] Board = {{' ',' ',' '},
+						  {' ',' ',' '},
+						  {' ',' ',' '}};
+		
+		
+		displayBoard(Board);
+		allowPlayerToChooseEitherXorO();
+		whoPlaysFirst(Board);
+	}
+	
+	
+	
 }
 	
 			
