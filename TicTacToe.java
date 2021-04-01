@@ -2,23 +2,7 @@ package tictactoe;
 import java.util.Scanner;
 
 public class TicTacToe {
-	 
-
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("WELCOME TO TIC-TAC-TOE GAME\n");
-		
-		char[][] Board = {{' ',' ',' '},
-						  {' ',' ',' '},
-						  {' ',' ',' '}};
-		
-		
-		displayBoard(Board);
-		allowPlayerToChooseEitherXorO();
-		
-		}
-
+	
 	public static void displayBoard(char[][] Board) {
 		System.out.println(Board[0][0]+ "|" + Board[0][1]+ "|" +Board[0][2]);
 		System.out.println("-+-+-");
@@ -48,6 +32,27 @@ public class TicTacToe {
 			computer = 'X';
 		
 	}
+	
+	 
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("WELCOME TO TIC-TAC-TOE GAME\n");
+		
+		char[][] Board = {{' ',' ',' '},
+						  {' ',' ',' '},
+						  {' ',' ',' '}};
+		
+		
+		displayBoard(Board);
+		allowPlayerToChooseEitherXorO();
+		
+		}
+
+	
+	
+	
 	
 }
 
