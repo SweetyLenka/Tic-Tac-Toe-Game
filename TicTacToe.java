@@ -62,7 +62,9 @@ public class TicTacToe {
 	
 	
 	}
-
+	
+	/*UC4 - Ability for user to make a move to a desired location in the board*/
+	
 	public static void abiltytoMovetoDesiredLocation(char[][] Board) {
 		System.out.println("Enter a desired location (1-9) : \n");
 		Scanner scanner = new Scanner(System.in);
