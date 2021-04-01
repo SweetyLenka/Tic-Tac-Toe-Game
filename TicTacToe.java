@@ -26,6 +26,8 @@ public class TicTacToe {
 		System.out.println("-+-+-");
 		System.out.println(Board[2][0]+ "|" + Board[2][1]+ "|" +Board[2][2]);
 	}
+	
+	/* UC2 - Ability to allow the player to choose a letter X or O */
 				
 	public static void allowPlayerToChooseEitherXorO()
 	{
