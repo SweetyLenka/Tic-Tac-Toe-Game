@@ -29,7 +29,9 @@ public class TicTacToe {
 		System.out.println("-+-+-");
 		System.out.println(Board[2][0]+ "|" + Board[2][1]+ "|" +Board[2][2]);
 	}
-				
+	
+	/*UC2 - Ability to allow the player to choose a letter X or O*/
+	
 	public static void allowPlayerToChooseEitherXorO()
 	{
 		Scanner sc = new Scanner(System.in);
@@ -49,6 +51,7 @@ public class TicTacToe {
 			computer = 'X';
 		
 	}
+	/*UC3 - As a Player would like to see the board so I can choose the valid cells to make my move during my turn - Write a method*/
 	public static void showBoard(char[][] Board) {
 		System.out.println("--------Showing Current Board------");
 		System.out.println(Board[0][0]+ "|" + Board[0][1]+ "|" +Board[0][2]);
